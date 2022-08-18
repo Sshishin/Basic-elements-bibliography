@@ -1,0 +1,142 @@
+:root {
+    --yellow-color: #cfa200;
+    --black-color: black;
+    --title-font: "DelaGothicOne-Regular";
+    --light-font: "Inter-LightBETA";
+    --regular-font: "Inter-Regular";
+    --medium-font: "Inter-Medium";
+}
+
+html, * {
+box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Inter-LightBETA";
+  font-style: normal;
+  font-weight: 300;
+  src:url(../fonts/Inter-LightBETA.woff);
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src:url(../fonts/Inter-Regular.woff);
+}
+
+@font-face {
+    font-family: "Inter-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src:url(../fonts/Inter-Medium.woff);
+}
+
+@font-face {
+    font-family: "DelaGothicOne-Regular";
+  font-style: normal;
+  font-weight: 500;
+  src:url(../fonts/DelaGothicOne-Regular.woff);
+}
+
+body {
+    background-color: white;
+    color: white;
+}
+
+.container {
+    background-color: white;
+    max-width: 1170px;
+    margin: 0 auto;
+    
+}
+
+.main-wrapper {
+    padding: 50px 100px;
+    background-color: #1e02d1;
+    height: 1000px;
+    margin-bottom: 200px;
+}
+
+.second-wrapper {
+    padding: 50px 100px;
+    background-color: #1e02d1;
+    height: 1000px;
+}
+
+.container-title {
+    text-align: center;
+    color: var(--black-color);
+    margin: 100px 0;
+    font-family: var(--title-font);
+    letter-spacing: 2px;
+    font-size: 60px;
+}
+
+.container-title-1 {
+    margin-bottom: 75px;
+    font-family: var(--title-font);
+    letter-spacing: 2px;
+    font-size: 28px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabwrapper {
+
+}
+
+.tabwrapper-btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabwrapper__img {
+    max-width: 600px;
+    max-height: 500px;
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+
+}
+.tabwrapper__text {
+    width: 600px;
+    background-color: var(--yellow-color);
+    color: var(--black-color);
+    padding: 20px;
+    margin-bottom: 50px;
+    font-family: var(--regular-font);
+    line-height: 25px;
+}
+.tabwrapper__btn {
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: var(--yellow-color);
+    border: none;
+    color: var(--black-color);
+    font-family: var(--medium-font);
+    font-size: 20px;
+}
+.tabwrapper__btn_active {
+    color: black;
+    background-color: white;
+}
+
+.location {
+    text-align: center;
+    font-family: var(--title-font);
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
