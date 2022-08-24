@@ -2,9 +2,11 @@
 
 //Start basics elements bibliography 
 
-//Создать элемент с функционалом табов и анимацией
-
 // Создать таймер
+
+// Добавить элементы HTML для модального окна
+
+// Tabs
 
 const content = document.querySelectorAll('.tabwrapper'),
       tabs = document.querySelectorAll('.tabwrapper__btn'),
@@ -42,4 +44,40 @@ tabsParent.addEventListener('click', (event) => {
             }
         });
     }
+});
+
+// Modal
+
+const modalTrigger = document.querySelectorAll('[data-modal]'),
+      modalClose = document.querySelector('[data-close]'),
+      modal = document.querySelector('.modal');
+
+for(let i = 0; i < modalTrigger.length; i++) {
+    modalTrigger[i].addEventListener('click', () => {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+function closeModal() {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';  
+}
+
+modalClose.addEventListener('click', () => {
+    closeModal();
+});
+
+modal.addEventListener('click', (event) => {
+    if(event.target == modal) {
+        closeModal(); 
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+if(e.code == 'Escape' && modal.classList.contains('show')) {
+    closeModal();
+}
 });
