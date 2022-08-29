@@ -2,9 +2,10 @@
 
 //Start basics elements bibliography 
 
-// Создать таймер
+// Создать повторяющиеся блоки на основе классов и метода this 
 
-// Добавить элементы HTML для модального окна
+// Сделать анимацию
+
 
 // Tabs
 
@@ -50,11 +51,11 @@ tabsParent.addEventListener('click', (event) => {
 
 const modalTrigger = document.querySelectorAll('[data-modal]'),
       modalClose = document.querySelector('[data-close]'),
-      modal = document.querySelector('.modal');
+      modal = document.querySelector('.show-modal');
 
 for(let i = 0; i < modalTrigger.length; i++) {
     modalTrigger[i].addEventListener('click', () => {
-        modal.classList.add('show');
+        modal.classList.add('show-flex');
         modal.classList.remove('hide');
         document.body.style.overflow = 'hidden';
     });
@@ -62,7 +63,7 @@ for(let i = 0; i < modalTrigger.length; i++) {
 
 function closeModal() {
     modal.classList.add('hide');
-    modal.classList.remove('show');
+    modal.classList.remove('show-flex');
     document.body.style.overflow = '';  
 }
 
@@ -77,7 +78,80 @@ modal.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (e) => {
-if(e.code == 'Escape' && modal.classList.contains('show')) {
+if(e.code == 'Escape' && modal.classList.contains('show-flex')) {
     closeModal();
 }
 });
+
+
+// Timer
+
+const deadline = '2022-09-02';
+
+function getTimeRemaining(endtime) {
+    let days, hours, minutes, seconds;
+    const t = Date.parse(endtime) - Date.parse(new Date());
+
+    if(t <= 0) {
+        days = 0;
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+    } else {
+        days = Math.floor(t/(1000 * 60 * 60 * 24));
+        hours = Math.floor((t/(1000 * 60 * 60) % 24));
+        minutes = Math.floor((t/(1000 * 60) % 60));
+        seconds = Math.floor((t/1000) % 60);
+    }
+
+
+    return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+    };
+
+    console.log(days)
+    console.log(hours)
+    console.log(minutes)
+    console.log(seconds)
+}
+
+function setClock (selector, endtime) {
+    const timer = document.querySelector(selector),
+            days = timer.querySelector('#days'),
+            hours = timer.querySelector('#hours'),
+            minutes = timer.querySelector('#minutes'),
+            seconds = timer.querySelector('#seconds'),
+            timeInterval = setInterval(updateClock, 1000);
+
+updateClock ();
+
+function getZero(num) {
+    if(num >= 0 && num < 10) {
+        return `0${num}`;
+    } else {
+        return num;
+    }
+}
+    
+function updateClock () {           
+    const t = getTimeRemaining(endtime); 
+
+    days.innerHTML = getZero(t.days);       
+    hours.innerHTML = getZero(t.hours);
+    minutes.innerHTML = getZero(t.minutes);
+    seconds.innerHTML = getZero(t.seconds);
+
+    if(t.total <= 0) {
+        clearInterval(timeInterval);
+    }
+}
+}
+
+setClock ('.timer', deadline);
+
+
+getTimeRemaining(deadline);
