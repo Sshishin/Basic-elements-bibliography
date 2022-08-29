@@ -113,10 +113,6 @@ function getTimeRemaining(endtime) {
         'seconds': seconds
     };
 
-    console.log(days)
-    console.log(hours)
-    console.log(minutes)
-    console.log(seconds)
 }
 
 function setClock (selector, endtime) {
@@ -155,3 +151,55 @@ setClock ('.timer', deadline);
 
 
 getTimeRemaining(deadline);
+
+
+
+
+//This and ES6 classes
+
+
+class MenuCard {
+    constructor(title, img, descr, parentSelector) {
+        this.title = title;
+        this.img = img;
+        this.descr = descr;
+        this.parent = document.querySelector(parentSelector);
+    }
+
+    render() {
+        const element = document.createElement('div');
+        element.innerHTML = `
+        <div class="this__first-block">
+                    <div class="this__first-block-title">${this.title}</div>
+                    <img class="this__img" src=${this.img} alt="">
+                    <p class="this__first-block-subtitle">${this.descr}</p>
+                </div>
+        `;
+        this.parent.append(element);
+    }
+}
+
+const lake = new MenuCard(
+    'Озеро Телецкое',
+    '"./img/lake.jpg"',
+    'Жемчужина Алтая, кристально чистое озеро Телецкое. Это – крупнейшее природное водохранилище горного края. Его питают ледниковые реки. Именно поэтому температура воды почти всегда постоянная – хрустально студеная.',
+    '.this-blocks'
+);
+
+const desert = new MenuCard(
+    'Белые пески',
+    '"./img/desert.jpg"',
+    'За миллионы лет солнце высушило море, которое находилось здесь ранее, оставив на его месте только белые гипсовые пески, которые не нагреваются на солнце. В центральной части пустыни можно встретить растения, редкие кактусы и даже пустынную дыню.',
+    '.this-blocks'
+);
+
+const field = new MenuCard(
+    'Альпийские луга',
+    '"./img/field.jpg"',
+    'Для альпийских лугов характерна специфическая, низкорослая растительность, а также растительность, образующая «травяные подушки». Это сближает данный тип экосистем с тундрой, благодаря чему альпийские луга также называют «горной тундрой».',
+    '.this-blocks'
+);
+
+lake.render();
+desert.render();
+field.render();

@@ -290,8 +290,9 @@ body {
     gap: 30px;
 }
 .this__first-block {
-    background-color: cadetblue;
+    background-color: var(--yellow-color);
     padding: 15px;
+    height: 630px;
 }
 
 .this__img {
@@ -301,6 +302,8 @@ body {
 }
 
 .this__first-block-title {
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 .this__first-block-subtitle {
 }
