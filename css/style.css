@@ -168,7 +168,7 @@ body {
 .modal-trigger {
     width: 60%;
     height: 25%;
-    background-color: var(--yellow-color);
+    background-color: white;
     border: none;
     font-size: 60px;
 }
@@ -345,4 +345,8 @@ body {
     border: none;
     background-color: white;
     font-size: 20px;
+}
+
+.active {
+    background-color: var(--yellow-color);
 }

@@ -211,6 +211,35 @@ field.render();
 
 // localStorage.clear();
 
+const buttons = document.querySelectorAll('.btn-lc');
+
+buttons.forEach(item => {
+    item.addEventListener('click', () => {
+        const elementLocal = item.id;
+        localStorage.setItem(elementLocal, 'active');
+        const resultLocal = localStorage.getItem(elementLocal);
+        if(resultLocal === 'active') {
+            item.classList.add('active');
+            console.log('active');
+        }
+    });
+});
+
+function render() {
+    const keysOfLocal = Object.keys(localStorage);
+    keysOfLocal.forEach(item1 => {
+        buttons.forEach(item2 => {
+            const id = item2.id;
+            if(item1 === id) {
+                item2.classList.add('active');
+            }
+        });
+    });
+}
+
+render();
+
+
 
 
 
