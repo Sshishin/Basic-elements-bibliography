@@ -86,7 +86,7 @@ if(e.code == 'Escape' && modal.classList.contains('show-flex')) {
 
 // Timer
 
-const deadline = '2022-09-02';
+const deadline = '2023-09-02';
 
 function getTimeRemaining(endtime) {
     let days, hours, minutes, seconds;
@@ -203,3 +203,14 @@ const field = new MenuCard(
 lake.render();
 desert.render();
 field.render();
+
+
+
+
+// Save the changes in localStorage
+
+// localStorage.clear();
+
+
+
+

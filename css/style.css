@@ -162,6 +162,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 200px;
 }
 
 .modal-trigger {
@@ -319,4 +320,29 @@ body {
 
 .show-flex {
     display: flex;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+.local-wrapper {
+    padding: 50px 100px;
+    background-color: #1e02d1;
+    height: 1000px;
+    margin-bottom: 200px;
+    padding-bottom: 200px;
+}
+
+.btn-lc {
+    width: 400px;
+    height: 50px;
+    border: none;
+    background-color: white;
+    font-size: 20px;
 }
