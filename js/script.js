@@ -241,5 +241,56 @@ render();
 
 
 
+// Fetch API
+// Вариант со спиннером можно посмотреть в App Pratice #2
+// ДОДЕЛАТЬ СПИННЕР И ВАРИАНТ В СЛУЧАЕ ОШИБОК
+
+const form = document.querySelector('.forms');
+
+const message = {
+    loading: 'img/form/spinner.svg',
+    success: 'Добро пожаловать',
+    failure: 'Произошла ошибка!'
+};
+
+postData(form);
+
+function postData(forms) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(forms);
+
+    const object = {};
+    formData.forEach((value, key) => {
+        object[key] = value;    //Очень важно всегда казывать name для input
+    });
+
+    console.log(object);
+
+    fetch('server.php', {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(object)
+    })
+    .then(data => data.text())      //Важно выбрать правильный метод обработки запроса
+    .then(data => {
+        
+        console.log(data);      
+        });
+
+        const thanks = form.append(message.success + ' ' + object.names);
+
+    });
+    
+
+    
+}
+
+
+
+
 
 
