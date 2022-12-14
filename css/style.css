@@ -359,6 +359,14 @@ body {
     padding-bottom: 200px;
 }
 
+.calculator-wrapper {
+    padding: 50px 100px;
+    background-color: #1e02d1;
+    height: 1000px;
+    margin-bottom: 200px;
+    padding-bottom: 200px;
+}
+
 .form-item {
     border: none;
     outline: none;
@@ -426,4 +434,15 @@ body {
 
 .offer__slider-wrapper {
     width: 650px;
+}
+
+.calculating__choose {
+    background-color: brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.calculating__total {
+    background-color: brown;
 }
