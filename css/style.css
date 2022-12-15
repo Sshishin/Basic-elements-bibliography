@@ -437,12 +437,40 @@ body {
 }
 
 .calculating__choose {
-    background-color: brown;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.calculating__total {
-    background-color: brown;
+.calculating__choose-item {
+    height: 50px;
+    background-color: var(--yellow-color);
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculating__subtitle {
+    text-align: center;
+    padding: 30px 0;
+    color: black;
+    font-size: 18px;
+}
+
+.calculating__result {
+    text-align: center;
+    color: black;
+    padding-bottom: 40px;
+    font-size: 36px;
+}
+
+.title-calc {
+    color: black;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.calculating__choose-item_active {
+    border: 5px solid black;
 }

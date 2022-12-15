@@ -474,6 +474,9 @@ dots.forEach(dot => {
     });
 });
 
+
+// Calculator
+
 function calc() {
     // Calc
 
